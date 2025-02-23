@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->integer('userID')->nullable();
-            $table->string('name')->nullable();
-            $table->string('email');
-            $table->string('password')->nullable();
+        Schema::create('rewards', function (Blueprint $table) {
+            $table->integer('reward_id')->nullable();
+            $table->string('reward_name')->nullable();
             $table->integer('score');
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('rewards');
     }
 };

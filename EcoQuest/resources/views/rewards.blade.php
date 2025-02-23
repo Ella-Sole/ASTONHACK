@@ -10,7 +10,7 @@
             @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
         </style>
     </head>
-    <body class = "login-bg">
+    <body>
         <main>
             <nav>
                 <a href="{{ url('/') }}">HOME</a>
@@ -20,14 +20,17 @@
                 <a href="{{url('/rewards')}}">REWARDS</a>
             </nav>
             <h1 class="page-title">EcoQuest</h1>
-            <div id="leaderboard">
-    <h1>Leaderboard</h1>
-    <ul id="scores-list">
-        <!-- Scores will be dynamically added here -->
-    </ul>
-
-
+            <div class = "rewards-section">
+            <h1>Rewards</h1>
+            <p>Exchange your points for rewards!</p>
+            <p>You currently have: {{ auth()->user()->score }} points</p>
+            <div class = "display-rewards">
+                @foreach ($reward as $rewards)
+                    <p class = "reward-name">{{$reward['reward_name']}}</p>
+                    <p class = "reward-image"><img src = "{{url($reward->reward_image . 'jpg')}}"></p>
+                    <p class = "reward-price">{{$reward['score']}}</p>
+                @endforeach
             </div>
-        </main>
+            </main>
     </body>
 </html>
