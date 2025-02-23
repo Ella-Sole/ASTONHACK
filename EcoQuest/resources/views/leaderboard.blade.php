@@ -23,6 +23,9 @@
             <div id="leaderboard">
     <h1>Leaderboard</h1>
     <ul id="scores-list">
+        <li>1: Sarah: 100</li>
+        <li>2: joemama: 50</li>
+        <li>3: EcoGrindset: 20</li>
         <!-- Scores will be dynamically added here -->
     </ul>
 
